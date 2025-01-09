@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -29,7 +30,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXW-W9-pnl">
                                 <rect key="frame" x="0.0" y="757" width="393" height="61"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" name="BrandBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="5Ix-zG-mIr"/>
                                 </constraints>
@@ -71,6 +72,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Z8-KV-INm"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="titleLabel" destination="xZk-2b-b4W" id="7xJ-7u-IGV"/>
                     </connections>
@@ -308,7 +310,9 @@
                                             <constraint firstAttribute="width" constant="40" id="UMs-qY-NB3"/>
                                         </constraints>
                                         <color key="tintColor" name="BrandLightPurple"/>
-                                        <state key="normal" image="paperplane.fill" catalog="system"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="large"/>
+                                        </state>
                                         <connections>
                                             <action selector="sendPressed:" destination="2KB-0v-KBl" eventType="touchUpInside" id="Vlx-ww-2Qi"/>
                                         </connections>
@@ -361,8 +365,20 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Pz-QP-RvU">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="BrandBlue"/>
+                        <color key="barTintColor" name="BrandBlue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" name="BrandBlue"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v5d-TY-5fl">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aDk-gB-suA"/>
                     </connections>
@@ -373,7 +389,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aLh-3P-5g4"/>
+        <segue reference="G7F-Qz-lrk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
@@ -392,9 +408,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
